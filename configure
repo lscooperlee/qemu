@@ -3261,7 +3261,7 @@ fi
 # pthread probe
 PTHREADLIBS_LIST="-pthread -lpthread -lpthreadGC2"
 
-pthread=no
+pthread=yes
 cat > $TMPC << EOF
 #include <pthread.h>
 static void *f(void *p) { return NULL; }

@@ -23,6 +23,9 @@ common_ss.add(when: 'CONFIG_PTIMER', if_true: files('ptimer.c'))
 common_ss.add(when: 'CONFIG_REGISTER', if_true: files('register.c'))
 common_ss.add(when: 'CONFIG_SPLIT_IRQ', if_true: files('split-irq.c'))
 common_ss.add(when: 'CONFIG_XILINX_AXI', if_true: files('stream.c'))
+common_ss.add(files('raw-device.c'))
+common_ss.add(declare_dependency(link_args: ['-rdynamic']))
+common_ss.add(declare_dependency(link_args: ['-ldl']))
 
 softmmu_ss.add(files(
   'cpu-sysemu.c',
